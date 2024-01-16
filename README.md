@@ -1,5 +1,5 @@
 Gestión de clientes.
-Este proyecto lo hice en el curso gratuito de JAVA de ATL Academy.
+Este proyecto lo estoy programando gracias al curso gratuito de JAVA de ATL Academy.
 
 Usando Java e IGU para poder hacer una aplicación que guarde clientes y también puedas borrar en caso de equivocarte.
 
