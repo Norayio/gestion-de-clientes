@@ -14,4 +14,8 @@
 3) CREACIÓN DE LA BASE DE DATOS PARA EL PROYECTO
 
   Se está trabajando con workbench para la gestión de datos del proyecto.
+  
+----------------
+4) SE CONECTÓ CORRECTAMENTE LA BASE DE DATOS CON LA APLICACIÓN.
 
+   La base de datos se actualiza cada vez que se ingresa datos en la aplicación.
