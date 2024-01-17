@@ -19,3 +19,13 @@
 4) SE CONECTÓ CORRECTAMENTE LA BASE DE DATOS CON LA APLICACIÓN.
 
    La base de datos se actualiza cada vez que se ingresa datos en la aplicación.
+
+----------------
+5) SE TERMINÓ LA APLICACION CON:
+
+   La base de datos se actualiza cada vez que se ingresan, editan y eliminan datos en la aplicación.
+   Botón "Nuevo" agregado: sirve para borrar las casilas de la aplicación para poder ingresar datos nuevos.
+
+   Se trabajó con funciones, forms, igu y lógica para poder crear esta aplicación.
+
+   *aún no tiene un descargable*
