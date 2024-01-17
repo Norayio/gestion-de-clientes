@@ -29,3 +29,4 @@
    Se trabajó con funciones, forms, igu y lógica para poder crear esta aplicación.
 
    *aún no tiene un descargable*
+   *la base de datos con la que se trabaja está ubicada en local*
