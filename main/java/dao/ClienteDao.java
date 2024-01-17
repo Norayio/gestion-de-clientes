@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.Cliente;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
 
 public class ClienteDao {
     
-    public void conectar(){
+    public void agregar(Cliente cliente){
         String baseDeDatos = "java";
         String usuario = "root";
         String password = "root";
@@ -30,7 +31,13 @@ public class ClienteDao {
             Class.forName(driver);
             conexion = DriverManager.getConnection(conexionUrl, usuario, password);
             
-            String sql = "INSERT INTO clientes (id, nombre, apellido, telefono, email) VALUES (NULL ,'Lucas', 'Moy', '123456789', 'lucasmoy@gmail.com')";
+            String sql = "INSERT INTO clientes (id, nombre, apellido, telefono, email) VALUES"
+                    + "(NULL ,"
+                    + "'"+ cliente.getNombre() +"',"
+                    + "'"+ cliente.getApellido() +"',"
+                    + "'"+ cliente.getTelefono() +"',"
+                    + "'"+ cliente.getEmail() +"')";
+            
             
             Statement statement = conexion.createStatement();
             
