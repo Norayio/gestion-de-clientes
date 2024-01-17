@@ -15,8 +15,10 @@ INSERT INTO clientes(nombre, apellido, telefono, email)
 VALUES
 ('Lucas', 'Moy', '123456789', 'lucasmoy@gmail.com');
 
-SELECT * FROM clientes;
-DELETE FROM clientes WHERE id = '1';
+
+-- se usa en funciones en la clase ClienteDao para llamar y trabajar con la bd
+SELECT * FROM clientes; 
+DELETE FROM clientes WHERE id = '1'; -- 
 
 
 
