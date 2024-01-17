@@ -3,6 +3,7 @@
  */
 package com.mycompany.prueba1;
 
+import forms.Formulario;
 import java.util.Scanner;
 
 /**

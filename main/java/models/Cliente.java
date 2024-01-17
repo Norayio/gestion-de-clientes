@@ -1,5 +1,5 @@
 
-package com.mycompany.prueba1;
+package models;
 
 /**
  *
@@ -13,6 +13,8 @@ public class Cliente {
     private String email;
     private String telefono;
 
+    
+    
     
     
     public String getNombre() {
