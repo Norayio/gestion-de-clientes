@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
  * @author Norayio
  */
 public class Formulario extends javax.swing.JFrame {
+    
+    private List<Cliente> lista = new ArrayList<>();
 
     /**
      * Creates new form Formulario
@@ -47,6 +49,11 @@ public class Formulario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +165,6 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private List<Cliente> lista = new ArrayList<Cliente>();
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
                 
@@ -168,16 +174,15 @@ public class Formulario extends javax.swing.JFrame {
         cliente.setEmail(this.txtEmail.getText());
         cliente.setTelefono(this.txtTelefono.getText());
         
+        ClienteDao dao = new ClienteDao();
+        dao.agregar(cliente);
         
-        lista.add(cliente);
         actualizarLista();
-        
         JOptionPane.showMessageDialog(rootPane, "el cliente se guardó correctamente");
         
         limpiarCajasDeTexto();
         
-        ClienteDao dao = new ClienteDao();
-        dao.agregar(cliente);
+        
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -196,10 +201,13 @@ public class Formulario extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         
         int indice = this.listClientes.getSelectedIndex();
+        Cliente cliente = lista.get(indice);
         
-        lista.remove(indice);
+        ClienteDao dao = new ClienteDao();
+        dao.eliminar(cliente.getId());
         
         actualizarLista();
+        JOptionPane.showMessageDialog(rootPane, "se elimino correctamente.");
         
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -215,7 +223,15 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        
+        actualizarLista();
+    }//GEN-LAST:event_formComponentShown
+
     private void actualizarLista() {
+        ClienteDao dao = new ClienteDao();
+        lista = dao.listar();
+        
         DefaultListModel datos = new DefaultListModel();
         
         for (int i = 0; i < lista.size(); i++) {

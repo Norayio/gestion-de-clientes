@@ -16,3 +16,11 @@ VALUES
 ('Lucas', 'Moy', '123456789', 'lucasmoy@gmail.com');
 
 SELECT * FROM clientes;
+DELETE FROM clientes WHERE id = '1';
+
+
+
+
+
+
+
