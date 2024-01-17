@@ -11,3 +11,8 @@ CREATE TABLE clientes(
     PRIMARY KEY (id)
 );
 
+INSERT INTO clientes(nombre, apellido, telefono, email)
+VALUES
+('Lucas', 'Moy', '123456789', 'lucasmoy@gmail.com');
+
+SELECT * FROM clientes;
